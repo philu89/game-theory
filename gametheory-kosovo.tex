@@ -1,0 +1,404 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template Version 1.1 (25/11/12)
+%
+% This template has been downloaded from: http://www.LaTeXTemplates.com
+%
+% Original author: Frits Wenneker (http://www.howtotex.com)
+%
+% License: CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PRÄAMBEL
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt,a4paper, reqno,  ngerman, fleqn]{scrartcl}
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.3} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage[colorlinks=true, citecolor=Citation]{hyperref} % keine Boxen sondern farbiger Text wenn= true  % For hyperlinks in the PDF
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+\usepackage[applemac]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol,calc}
+\usepackage{blindtext}
+\usepackage{fixltx2e}
+\usepackage{tikz}
+\usetikzlibrary{decorations,arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usepgflibrary{decorations.pathreplacing}
+\usepackage{dblfloatfix}
+\usepackage{framed, color}
+%\usepackage[style=authortitle-icomp]{biblatex} 
+
+\usepackage{natbib}
+\usepackage{kzfss}
+\usepackage{geometry}
+\usepackage{titling}
+\usepackage{fancybox}
+
+\usepackage{acronym} % erstellen eines Abkürzungsverzeichnis
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+\newcommand{\todo}[1]{
+    \addcontentsline{tdo}{todo}{\protect{#1}}
+    \marginpar{#1}
+}
+
+\makeatletter \newcommand \listoftodos{\section*{Todo list} \@starttoc{tdo}}
+  \newcommand\l@todo[2]
+    {\par\noindent \textit{#2}, \parbox{10cm}{#1}\par} \makeatother
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\arabic{section}}
+\titleformat{\section}[block]{\large\scshape}{\thesection.}{1em}{} % Change the look of the section titles \centering
+\setlength{\tabcolsep}{2em}
+
+\usepackage{fancyhdr} %Paket laden
+\pagestyle{fancy} %nur Seitenzahl in der Fußzeile (LaTeX-Standard)
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[C]{\fontsize{10}{12}  \selectfont Seminar "Spieltheorie in den Sozialwissenschaften" $\bullet$ Universität Bern $\bullet$ Prof. Dr. Axel Franzen} % Custom header text
+\fancyfoot[CO,CE]{\thepage}
+
+% zusätzliches Diagramm-Paket
+
+% Überschriften anpassen
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+\renewcommand{\refname}{Literaturverzeichnis}
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+
+\definecolor{Citation}{rgb}{0,0.3,0.9} % helles blau für Zitationen
+\definecolor{shadecolor}{gray}{0.88}
+
+\newenvironment{tabularsmall}{\fontsize{10}{10}\selectfont\tabular}{\endtabular}
+
+
+%----------------------------------------------------------------------------------------
+%	TITEL-GESTALTUNG
+%----------------------------------------------------------------------------------------
+
+%  "Ideologie oder Bedarf? Determinanten der kommunalen Steuerpolitik"
+%  "Parteiendifferenz und Steuerbelastung. Empirische Evidenz aus dem Kanton Bern"
+
+\title{\vspace{-12mm}\fontsize{38pt}{10pt}\selectfont\textbf{Überwindung des Nullsummenspiels\vspace{3mm} \\ \large \textit{Spieltheoretische Fallstudie zu den Verhandlungen \\zwischen Serbien und dem Kosovo}}} % Article title 
+% Konfliktlösung durch Kooperationsgewinn
+\setlength{\droptitle}{4em}     % Eliminate the default vertical space
+\addtolength{\droptitle}{-10pt}   % Only a guess. Use this for adjustment
+\author{
+\large
+\textsc{Philipp Lutz}\thanks{Dank geht an Prof. Dr. Axel Franzen. powered by \LaTeX.}\\[2mm] % Your name
+\normalsize 09-122-821\\ 
+\normalsize Universität Bern \\ % Your institution
+\normalsize \href{mailto:philipp.lutz@students.unibe.ch}{philipp.lutz@students.unibe.ch} \\ \\ % Your email address
+\normalsize eingereicht am \\
+\normalsize 15. September 2013
+\vspace{-5mm}
+}
+\date{}
+
+%----------------------------------------------------------------------------------------
+%	BEGINN DES DOKUMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle % Insert title
+\thispagestyle{fancy} % All pages have headers and footers
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+ \noindent Serbia and Kosovo started conflict resolution negotiations in May 2013 after being faced with political conditionality by the European Union. These negotiations aim the normalization of their mutual relations to open an EU-membership-perspective for these countries. This paper analyses the negotiation process with methods of game theory. The results show that cooperation of the conflict partners blabla. RESEARCH QUESTION. RELEVANCE. RESEARCH DESIGN. RESULTS. IMPLICATIONS\\
+\end{abstract}
+
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	Verzeichnisse (Inhalt, Abbildungen, Tabellen)
+%----------------------------------------------------------------------------------------
+
+\tableofcontents 
+
+\vspace{2em}
+
+\listoffigures
+
+\listoftables
+
+%\listoftodos
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	INHALT
+%----------------------------------------------------------------------------------------
+
+\section{Einleitung}
+
+\lettrine[nindent=0em,lines=3]{S} \sc üdosteuropa ist von verschiedenen politischen Transformationsprozessen geprägt. Nach den kriegerischen Auseinandersetzungen in den 1990er Jahren in Folge des Zerfall Jugoslawiens sind zahlreiche neue souveräne Staaten entstanden welche Mitgliedsländer der Europäischen Union (EU) werden wollen. Die EU möchte die Erweiterung auf den Westbalkan vorantreiben, die dortigen Staaten zu Demokratie und Rechtstaatlichkeit anhalten und für politische Stabilität in der Region sorgen. Behindert wird der Prozess der europäischen Annäherung auf dem Westbalkan durch ungelöste staatliche Konflikte in der Region, insbesondere über den Konflikt zwischen Serbien und seiner früheren Republik Kosovo. Im Frühjahr 2013 haben weitreichende Verhandlungen zwischen den Regierungen Serbiens und Kosovos stattgefunden um ihre gegenseitigen Beziehungen zu normalisieren und die Perspektive einer EU-Beitrittsperspektive für beide Länder zu öffnen.\footnote{\,\,\url{http://www.euractiv.de/erweiterung-und-nachbarn/artikel/serbien-kosovo-verhandeln-fr-eine-eu-perspektive-007655}, abgerufen am 14.08.2013} 
+
+In dieser Arbeit soll diese Verhandlungssituation spieltheoretisch dargestellt und analysiert werden. Dabei soll insbesondere die Frage gestellt werden, welche Konstellation der involvierten Akteure die Verhandlungen erst möglich gemacht haben, welche Dilemma während den Verhandlungen zu bewältigen sind und unter welchen Bedingungen eine ideale Verhandlungslösung möglich ist. \\
+
+\noindent Spieltheoretische Modelle erfreuen sich wachsender Beliebtheit in der Analyse internationaler Politik insbesondere in der Analyse von zwischenstaatlichen Konflikten (siehe \citet{Snidal1986}). Der Konflikt zwischen Serbien und Kosovo und dem gleichzeitig stattfindenden europäischen Integrationsprozess eröffnet eine interessante Perspektive für spieltheoretische Analysen. An diesem Fallbeispiel soll gezeigt werden wie klassische soziale Dilemmas durch Anreize von aussen gelöst werden können.
+
+Die Arbeit ist folgendermassen aufgebaut. In einem ersten Schritt werden die Transformationsprozesse im Westbalkan theoretisch eingebettet und als Prozess der Europäisierung beschrieben. Im zweiten Schritt werden Konzepte der Spieltheorie diskutiert und ausgeführt, wie diese auf politische Verhandlungssituationen angewendet werden können. Darauf folgt der analytische Teil, wo die spieltheoretischen Konzepte auf die Verhandlungen zwischen Serbien und dem Kosovo angewendet werden. Zum Schluss werden die Resultate diskutiert und mögliche Schlussfolgerungen gezogen.
+
+\section{Transformationstheorie} 
+\subsection{Europäisierung}
+
+Die Europäische Integration ist eine der zentralen und umfangreichsten Transformationsprozesse in Europa in den letzten Jahrzehnten. Die Europäische Union als europäischer Staatenverbund umfasst seit dem Juli 2013 mit dem Beitritt Kroatiens 28 Mitgliedsländer. Europäisierung wird ein Prozess verstanden politische, wirtschaftliche und soziale Institutionen auf europäischer Ebene zu schaffen mit dem Ziel die europäische Integration voranzutreiben und ein gemeinsames Europa zu etablieren.\footnote{ Eine gute Übersicht über die theoretischen Grundlagen der europäischen Integration und deren Einfluss auf die nationale Politik siehe \cite{KevinFeatherstone2003, Nugent2010} weitere!!!} Neben der Vertiefung der Europäischen Integration ist die Erweiterung ein zweiter wichtiger Bestandteil der Europäisierung \citep[S.33ff]{Nugent2010}. Verschiedene Erweiterungsrunden haben die Anzahl der Mitgliedsländer der Europäischen Union und ihrer Vorgängerorganisationen kontinuierlich erhöht. Mit der Osterweiterung im Jahre 2004 und 2007 wurden erstmals postkommunistische Länder Osteuropas in die Europäische Union aufgenommen.\footnote{ In der bislang umfangreichste Erweiterungsrund der EU wurden 2004 Estland, Lettland, Litauen, Malta, Polen, Slowakei, Slowenien, Tschechien, Ungarn und Zypern aufgenommen, etwas später im Jahre 2007 folgten Bulgarien und Rumänien.} Diese Länder haben innerhalb von rund zwei Jahrzehnten ihre politischen Institutionen demokratisiert, ihre wirtschaftlichen Institutionen marktwirtschaftliche organisiert und sich auf die Übernahme von EU-Recht vorbereitet. 
+
+\newpage
+
+\subsection{Politische Konditionalitäten}
+
+Um eine erfolgreiche Integration in die Europäische Union der osteuropäischen Länder zu gewährleisten wurden eine Reihe von Kriterien und Anforderungen definiert welche erfüllt sein müssen für eine Annäherung an Europa. Diese wurden in den Kopenhagener Kriterien festgeschrieben. Diese legen fest welche politischen und wirtschaftlichen Bedingungen ein Land erfüllen muss damit es Mitglied der Europäischen Union werden kann. Ein Land muss stabile Institutionen aufweisen welche Demokratie, Rechtststaat, Menschenrechte, der Schutz von Minderheiten und eine funktionierende Marktwirtschaft garantieren können. Dies soll zur Konvergenz zwischen existierenden und neuen Mitgliedsländern der EU beitragen und sicherstellen dass ein Anwärterland fähig ist, den \emph{acquis communitaire}, das gemeinschaftliche Recht erfolgreich anzuwenden.
+
+Das Ausüben politischer Konditionalitäten ist eine politische Strategie um die Regeln der EU in die beitrittswilligen Ländern zu transferieren (\citet{Schimmelfennig&Sedelmeier}). Die zentrale Annahme ist wiederum, dass die Regierung einer nutzenmaximierenden Strategie folgt um ihren Machterhalt zu sichern. Demnach muss die EU die Anreizstrukturen so verändern, dass es für eine Regierung attraktiv scheint die EU-Regeln zu übernehmen, auch wenn gewisse innenpolitische Faktoren dagegensprechen. Das geschieht dadurch dass bei der Erfüllung gewisser Konditionen, die EU eine Belohnung offeriert. Die Belohnung muss also einen grösseren positiven Anreiz bieten als die potentiellen innenpolitischen Folgen einen negativen Anreiz bieten. Das Zuckerbrot oder \emph{golden carrot} am Ende des Europäisierungsprozess bildet die Mitgliedschaft in der Europäischen Union. Dazwischen gibt es verschiedene Schritte und Stadien welche zu diesem Ziel führen. Für jeden Fortschritt der serbischen Regierung bei der Anpassung an europäische Strukturen und Regeln wird als Belohnung ein weiterer Schritt in Richtung Mitgliedschaft gegangen. Eine solche Belohnung kann beispielsweise Handelserleichterungen, ein Assoziationsabkommen oder die Aufnahme von Beitrittsverhandlungen sein. Wird der erwünschte Fortschritt nicht erzielt wird die Belohnung zurückgehalten um den politischen Druck für Veränderungen aufrecht zu erhalten. Durch einen Prozess der schrittweisen Institutionalisierung und Evaluierung durch die EU kann auch sichergestellt werden, dass die Konformität der staatlichen Institutionen effektiv garantiert ist und nicht nur formell beabsichtigt (\citet{Noutcheva2009}). 
+
+\section{Spieltheorie}
+
+\subsection{Kooperationsproblem} 
+
+Eine Frage mit der sich die Sozialwissenschaften seit langem beschäftigen ist, wie Kooperation zwischen rationalen und eigennutzorientierten Akteuren zustande kommt. Eine Teildisziplin welche solche Kooperationsprobleme als interdependente Entscheidungssituationen strategisch handelnder Akteure modelliert ist die Spieltheorie. Ursprünglich aus der Mathematik stammend erfreut sich die Spieltheorie mittlerweile grosser Beliebtheit in den Wirtschafts- und Sozialwissenschaften zur Analyse sozialer Dilemmas \citep{Diekmann2010}. Dabei werden Optimierungsprobleme in sozialen Entscheidungssituationen analysiert in der zwei oder mehr rationale Akteure miteinander interagieren. Unter welchen Bedingungen kooperieren zwei rationale Akteure miteinander wenn es keinen höheren Zwang zur Kooperation gibt und keine Absprache zwischen den Akteuren? Kooperation bezeichnet eine Situation wo die Akteure ihr Handeln aufeinander abstimmen um mit einer gemeinsamen Strategie ein beidseitigen Gewinn zu erzielen. Eine einfache und klassische Modellierung des Kooperationsproblems stellt das Gefangenendilemma dar. \footnote{ für einen Überblick zum Gefangenendilemma siehe \cite{Axelrod1984, Diekmann2010, Poundstone1993, Rapoport1965}} Dieses besteht aus zwei Akteuren mit jeweils zwei Entscheidungsmöglichkeiten, entweder zu kooperieren oder zu defektieren. Daraus resultieren vier verschiedene Interaktionsmöglichkeiten, welche die Akteure in eine Präferenzordnung bringen indem sie ihnen deren Nutzwert berechnen. Das Gefangenendilemma beschreibt ein Fall von zwei Verbrecher-Komplizen welche getrennt voneinander vom Staatsanwalt verhört werden, der ihnen eine Kronzeugenregelung anbietet. Die Verbrecher haben die Möglichkeit entweder die Verbrechen zuzugeben oder aber zu schweigen. Da sie nicht antizipieren können was ihr Komplize entscheiden wird, ist es in jedem Fall günstiger die Verbrechen zuzugeben und mit dem Staatsanwalt zu kooperieren. Die dominante Strategie eines rationalen Akteurs in dieser Situation ist die Verbrechen zuzugeben, die optimale Lösung für beide wäre aber wenn beide schweigen würden, dann könnten ihnen die Verbrechen am wenigsten nachgewiesen werden. Da allerdings der andere defektieren könnte, habe ich einen starken Anreiz ebenfalls zu defektieren. Auch Im Falle der Kooperation des anderen Kriminellen ist eine Defektion die bessere Lösung dank der Kronzeugenregelung. Die Defektion ist also eine dominante Strategie, die in jedem Fall besser abschneidet. Weil aber die Akteure jeweils ihre dominante Strategie spielen, ist das Ergebnis aus kollektiver Sicht nicht optimal. Ein Dilemma ist somit eine Situation wenn individuell rationale Entscheidungen zu kollektiv suboptimalen Resultaten führen, unter nicht-kooperativen Spielbedingungen ist das suboptimale Resultat wenn beide rationalen Akteure defektieren das Nash-Gleichgewicht, wo keiner der Akteure einen Zugewinn realisieren kann durch Abweichung von diesem Punkt.
+
+Die handelnden Akteure müssen nicht nur einzelne Individuen sein, sondern können auch kollektive Akteure wie beispielsweise Staaten sein sofern sie als unitarer Block auftreten. Dies ermöglicht spieltheoretische Modelle auch auf die Beziehungen zwischen Staaten in der internationale Politik anzuwenden. Gemäss einer verbreiteten These in der Internationalen Beziehungen ist jeder Staat unter der Bedingung der zwischenstaatlichen Anarchie in erster Linie an seinem eigenen Überleben interessiert und andere Staaten stellen eine Bedrohung für ihn dar. Deshalb wird er sich versuchen aufzurüsten um ein genug grosses Drohpotential aufzubauen, die anderen Staaten vor einem Angriff abzuhalten. Da alle Staaten in der gleichen Situation sind, führt dies zu einem gegenseitigen Wettrüsten. Dieses Phänomen der internationalen Politik wird auch Sicherheitsdilemma genannt und stellt eine strategische Interaktion dar, welche mit spieltheoretischen Ansätzen modelliert werden kann \citep[S.78ff]{Schimmelfennig2008}.
+
+Ein möglicher Ausweg aus diesem Dilemma wäre, wenn die Akteure miteinander kooperieren würden. Wie kommt eine solche Kooperation zustande. Eine Kooperation zwischen rational handelnder Akteure kann auch ohne Zwang erfolgen wie \cite{Axelrod1984} mit der tit-for-tat-Strategie aufzeigt. Die Strategie folgt dem Prinzip, dass bei der ersten Spielbegegnung kooperiert wird und in den folgenden Spielbegegnungen jeweils die Entscheidung des anderen Spielers kopiert wird. Kooperiert der andere Spieler, dann sollte man kooperieren, falls der andere Spieler defektiert, sollte man ebenfalls defektieren. Diese Strategie hat sich als sehr effizient erwiesen (Quelle). Diese Lösung des Kooperationsproblems funktioniert allerdings nur unter gewissen Umständen, die Interaktion muss iteriert werden und das Ende darf nicht bekannt sein. Bei einer einmaligen Spielbegegnung lässt sich tit-for-tat ausbeuten, da bei dieser Strategie bei der ersten Begegnung kooperiert wird solange die Entscheidung des anderen Akteurs nicht antizipiert werden kann. Eine Möglichkeit wie Kooperation dennoch entstehen könnte wäre durch Absprache der beteiligten Akteure indem sie miteinander verhandeln um zu einer gemeinsamen Strategie zu gelangen und diese in einem Vertrag festhalten. Im nächsten Abschnitt folgt eine Diskussion einer solchen Verhandlungstheorie.
+
+\subsection{Verhandlungslösung} 
+
+Das Gefangenendilemma besagt, dass unter den Bedingung von rational-handelnden Akteuren das Nashgleichgewicht nicht auf dem kollektiv besten Ergebnis zu liegen kommt. Eine mögliche Lösung dieses Dilemmas besteht darin, dass sich die Akteure miteinander absprechen. Wenn die Akteure miteinander sprechen, können sie sich auf eine Entscheidungsregel einigen, damit das optimale Ergebnis erreicht wird und beide Akteure einen Zugewinn zur Situation ohne Absprache realisieren können. Doch auch bei einer Absprache, hat jeder Akteur weiterhin den Anreiz zu defektieren, denn gegeben der andere kooperiert, kann der Akteur einen hohen Gewinn realisieren. Entscheidet sich der Akteur trotzdem fürs Kooperieren riskiert er die Defektion des anderen Akteurs und erleidet dadurch einen Verlust gegenüber der Situation ohne Absprache, (dem Nash-Gleichgewicht). Um also die Akteure von einer Defektion abzuhalten und dazu zu bringen sich an die Absprache zu halten, muss die Absprache verbindlich sein und es muss ein glaubwürdiges Sanktionspotential bestehen im Falle einer Defektion. Damit bewegen wir uns im Bereich der kooperativen Spieltheorie welche von der Annahme ausgeht, dass zwischen den Akteuren Verträge geschlossen werden können die gültig und einklagbar sind.
+
+Doch auch bei der Vertragsverhandlung kann sich ein ähnliches soziales Dilemma ergeben wie im soeben beschriebenen Gefangenendilemma. Die Verhandlungssituation lässt sich ebenfalls spieltheoretisch modellieren mit einem definierten Ziel, den handlungsleitenden Interessen und den möglichen Entscheidungsalternativen. Eine Verhandlung ergibt sich dann, wenn zwei Akteure ein gemeinsames Ziel verfolgen und dieses nur gemeinsam erreichen können oder zumindest wenn die Kooperation zwischen den Akteuren die Erreichung des Ziels vereinfacht. Die Akteure werden nur dann eine Kooperation eingehen, wenn für beide ein zusätzlicher Gewinn durch die Kooperation entsteht im Vergleich zur Situation, wenn jeder Akteur nur für sich handelt. Die Voraussetzung, dass eine Kooperation zustandekommt besteht in einem erfolgreichen Verhandlungsabschluss, bei dem festgelegt wird wie der Kooperationsgewinn auf die Akteure aufgeteilt wird. Die Akteure haben also bei diesem kollektiven Entscheidungsprozess nicht nur das gemeinsame Interesse an einer vorteilhaften Kooperation, sondern auch das entgegengesetzte Interesse an einem möglichst grossen Anteil am Kooperationsgewinn.\footnote{ Eine umfangreiche Beschreibung dieser klassischen Verhandlungstheorie findet sich bei blabla} Die Entscheidungsalternativen für den einzelnen Akteur in diesem Fall besteht im kooperativen Verhalten oder im kompetitiven Verhalten. Dadurch entstehen wie beim Gefangenendilemma ein soziales Dilemma mit vier potentiellen Interaktionskombinationen. Das optimale Resultat beim Verhandlungsdilemma ist wenn beide Akteure kooperieren. Dies geschieht allerdings nicht, da kompetitives Verhalten die dominante Strategie ist. Das heisst, egal was der andere Akteur entscheidet, ist es sich kompetitiv zu verhalten (siehe Tabelle 1). Wenn allerdings beide kompetitiv handeln, dann gibt es eine geringere Auszahlung pro Akteur. Somit führt auch in der Verhandlungssituation individuelle Rationalität zu kollektiver Selbstschädigung in Form eines sozialen Dilemmas.
+
+\begin{table}[ht]
+\centering
+\caption{Entscheidungsmatrix Verhandlungsdilemma}
+\vspace{0.5em}    
+\begin{tabular}{l||c|c}
+    ~                & \textbf{B ist kooperativ} & \textbf{B ist kompetitiv}        \\ \hline\hline
+    \textbf{A ist kooperativ} & (\,3\,,\,3\,)            & (\,0\,,\,5\,)                   \\ \hline
+    \textbf{A ist kompetitiv} & (\,5\,,\,0\,)            & (\,1\,,\,1\,) 				  \\ 
+    \end{tabular}
+\label{table:dil}
+\end{table}
+
+Haben zwei Akteure einen Konflikt miteinander und ist die Situation so, dass wenn der eine gewinnt, der andere automatisch verliert, dann spricht man von einem Nullsummenspiel. In dieser Situationen sind Kompromisse nur schwierig vorstellbar. Um den Konflikt zischen den Akteuren zu lösen muss aus dem Nullsummenspiel ausgestiegen werden damit eine Verhandlung stattfinden kann um eine Win-win-Lösung zu erzielen, also einem Ergebnis bei dem beide Akteure durch Kooperation mit dem anderen einen Zugewinn realisieren können \citep{Nash1950}.
+
+Kalai und Smorodinsky erweitern es um vier Bedingungen welche gegeben sein müssen, damit eine ideale Lösung zu Stande kommen kann. Dies sind Pareto-Optimalität, Symmetrie, Unabhängigkeit von irrelevanten Alternativen sowie Monotonie. \citep{Kalai1975}
+
+Solche spieltheoretischen Modelle bilden ein Analyse-Instrument für Entscheidungssituationen mit strategischer Interdependenz wie sie oft in der internationalen Politik anzutreffen sind. So hat \citep{Putnam1988} internationale Politik als Zwei-Ebenen-Spiel beschrieben mit einerseits der überstaatlichen Ebene und andererseits der nationalstaatlichen Ebene. MEHR DETAILS
+
+\vspace{1em}
+
+\section{Analytischer Teil} 
+
+\subsection{Verhandlungen ermöglichen} % (fold)
+
+Serbien und der Kosovo haben sich am Verhandlungstisch getroffen unter Vermittlung der Europäischen Union um das grösste Hindernis des europäischen Integrationsprozesses dieser Länder aus dem Weg zu räumen, der anhaltende Konflikt über die Unabhängigkeit Kosovos von Serbien. In diesem Abschnitt soll ein spieltheoretisches Modell dieser Verhandlungssituation erstellt werden. \\
+
+\noindent Die Situation welche hier modelliert wird ist eine klassische Konfliktsituation in der internationalen Politik, es geht um die Frage der staatlichen Souveränität des Kosovos, was gleichzeitig die Unabhängigkeit von Serbien bedeutet. Kosovo möchte eine möglichst grosse Eigenständigkeit erhalten während Serbien seine frühere Republik weiterhin als Teil Serbiens betrachtet. Somit handelt es sich um ein klares Nullsummenspiel, gewinnt der Kosovo, dann verliert Serbien und vice versa. 
+
+Damit dieser Konflikt gelöst werden kann muss aus dem Nullsummenspiel ausgestiegen werden. Dies kann nur dadurch geschehen, dass beide Länder gewinnen wenn sie miteinander kooperieren. Die EU übt mit politischen Konditionalitäten Druck auf die Regierungen Serbiens und Kosovos aus, sich an den Verhandlungstisch zu setzen. Sie kann deshalb Druck auf diese Länder ausüben, weil sie ihnen einen Kooperationsgewinn anbieten kann, nämlich eine europäische Annäherung mit dem Ziel der EU-Mitgliedschaft. Diese Perspektive erzielt grosse Anziehungskraft. Eine europäische Annäherung wird allerdings nur dann stattfinden, wenn sich Kosovo und Serbien auf ein friedliche Konfliktlösung geeinigt haben.
+
+Ein Nachgeben in der Kosovofrage birgt elektorale Risiken die dazu führen, dass sich die serbische Regierung in dieser Frage zurückhält. Politische Konditionalitäten können die Anreizstrukturen verändern, so dass die Risiken der Regierung geringer werden, nämlich dadurch wenn gleichzeitig ein europapolitischer Fortschritt erzielt werden kann. Denn der Wunsch der Staaten im Westbalkan der EU beizutreten gibt der EU eine grosse Macht deren politische Institutionen und Politikinhalte zu beeinflussen. Das Ausüben politischer Konditionalitäten ist eine politische Strategie um die Regeln der EU in die beitrittswilligen Ländern zu transferieren (\citet{Schimmelfennig&Sedelmeier}). Die zentrale Annahme ist wiederum, dass die Regierung einer nutzenmaximierenden Strategie folgt um ihren Machterhalt zu sichern. Demnach muss die EU die Anreizstrukturen so verändern, dass es für eine Regierung attraktiv scheint die EU-Regeln zu übernehmen, auch wenn gewisse innenpolitische Faktoren dagegensprechen. Das geschieht dadurch dass bei der Erfüllung gewisser Konditionen, die EU eine Belohnung offeriert. Die Belohnung muss also einen grösseren positiven Anreiz bieten als die potentiellen innenpolitischen Folgen einen negativen Anreiz bieten. Das Zuckerbrot oder golden carrot am Ende des Europäisierungsprozess bildet die Mitgliedschaft in der Europäischen Union. Dazwischen gibt es verschiedene Schritte und Stadien welche zu diesem Ziel führen. Für jeden Fortschritt der serbischen Regierung bei der Anpassung an europäische Strukturen und Regeln wird als Belohnung ein weiterer Schritt in Richtung Mitgliedschaft gegangen. Eine solche Belohnung kann beispielsweise Handelserleichterungen, ein Assoziationsabkommen oder die Aufnahme von Beitrittsverhandlungen sein. Wird der erwünschte Fortschritt nicht erzielt wird die Belohnung zurückgehalten um den politischen Druck für Veränderungen aufrecht zu erhalten. Durch einen Prozess der schrittweisen Institutionalisierung und Evaluierung durch die EU kann auch sichergestellt werden, dass die Konformität der staatlichen Institutionen effektiv garantiert ist und nicht nur formell beabsichtigt (\citet{Noutcheva2009}). Ob das Abkommen Serbiens mit der früheren Provinz Kosovo zu einer Lösung der Kosovofrage beiträgt und zu der Eröffnung von Beitrittsverhandlungen führt, hängt noch von der Umsetzung durch die beiden Unterzeichnnerstaaten ab. Der politische Druck und die Anreizmechanismen der Europäischen Union werden jedoch so lange bestehen bleiben bis Serbien zu einem EU-Mitgliedsstaat geworden ist oder der EU-Beitritt für Serbien keine attraktive aussenpolitische Option mehr darstellt.
+
+Zusammenfassung für die zweite These lässt sich festhalten, dass gegeben der europäischen Orientierung Serbiens die Europäische Union durch politische Konditionalitäten eine Politik-Änderung gegenüber Kosovo erreichen konnte. Nach dem Prinzip Peitsche oder Zuckerbrot wird politische Konformität mit den politischen Bedingungen der EU mit Fortschritten im Integrationsprozess belohnt oder anderenfalls blockiert. Somit erhöht sich der politische Nutzen für die serbische Regierung bei einer Einigung mit dem Kosovo und erhöht gleichzeitig die Kosten im Falle einer Nicht-Einigung mit dem Kosovo. Die Eröffnung von EU-Beitrittsverhandlungen wären ein Quantensprung für Serbien bei dessen europäischen Integration. Das Angebot der Europäischen Union dieses Dossier nach einer Einigung mit dem Kosovo zu öffnen führte dazu, dass die serbische Regierung trotz innenpolitischen Bedenken gegenüber einer Anerkennung Kosovos das erwähnte Abkommen unterzeichnete.
+
+
+Spieltheoretische Analyse der Kosovo-Verhandlungen zwischen der serbischen und der kosovarischen Regierung mit der Europäischen Union als Verhandlungsführer. Zwei-Ebenen-Spiel. Auch Vetospieler-Theorem im räumlichen Modell mit drei Akteuren und ihren Idealpunkten.
+
+ein Nicht-Nullsummen-Spiel zwischen zwei Akteuren
+
+Spiel mit drei Akteuren: Serbien, Kosovo, EU
+
+Konfliktsituation zwischen Serbien und dem Kosovo, wenn der Kosovo gewinnt (Souveränität), dann verliert Serbien, wenn Serbien gewinnt(Kosovo als Teil Serbiens), dann verliert der Kosovo. Es handelt sich also um ein Nullsummenspiel. In einem ersten Schritt dass es überhaupt zu Verhandlungen zwischen den beiden Ländern kommen kann, muss die Bedingung erfüllt sein, dass beide gewinnen können durch gegenseitige Kooperation. Der politische Druck von seiten der EU mit ihren politischen Konditionalitäten für eine europäische Annäherung ermöglicht es aus dem Nullsummenspiel auszusteigen und in Verhandlungen einzutreten.
+
+Im ersten Schritt ein kooperatives Verhandlungsspiel zwischen der serbischen Regierung und der kosovarischen Regierung.
+
+Verhandlungssituation besteht aus zwei Akteuren mit einer gemeinsamen Auszahlungsfunktion auf welche man sich im Verhandlungsprozess einigt.
+
+
+Beide Regierungen als unitarer Block, oder doch eher two-level game \citep{Putnam1988} mit überstaatlicher Ebene und nationalstaatlicher Ebene?
+
+Im zweiten Schritt ein Ultimatums-Spiel: Serbien und Kosovo einigen sich auf einen gegenseitigen Vertrag, danach entscheidet die EU ob dieser Vertrag ihrem Ziel genügend dient und entscheidet dann, ob die versprochene Belohnung aktiviert wird.
+
+der zweite Schritt muss im ersten Schritt antizipiert werden.
+
+das heisst der Verhandlungsteilnehmer hat ein Interesse genau so weit zu gehen wie es für den anderen noch zumutbar ist, also einerseits muss die andere Regierung mit der Auszahlungsfunktion einverstanden sein und andererseits muss die EU mit der Grösse der eingegangenen Konzessionen zufrieden sein.
+
+Ist es eine einmalige oder eine wiederholte Interaktion. Da die Regierungen Serbiens und Kosovos auch in Zukunft gemeinsame politische Herausforderungen zu bewältigen haben gibt es einen grossen Schatten der Zukunft wo die Verhandlungsteilnehmer sicher sein können wieder auf den gleichen Akteur zu treffen irgendwann in der nahen Zukunft. 
+
+\subsection{Vertragsverhandlung} % (fold)
+
+Mathematische Modellierung der Verhandlungssituation zwischen Serbien und dem Kosovo, eventuell auch grafische Darstellung
+
+Grafik zum möglichen Verhandlungsbereich (ZOPA) zone of possible agreement, ist eingeschränkt durch die Schmerzgrenze, in diesem Fall was innenpolitisch gerade noch akzeptabel ist. \\
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+\label{table} 
+\node[draw] at (0,1) {SRB};
+\draw[line width=0.8mm,black](1,1)--(8,1) node [near start=30, below=5]{};			% erste Linie
+\draw[line width=0.5mm,black](1,0.9)--(1,1.1);		% Anfangsmarkierung
+\draw[line width=0.5mm,black](8,0.9)--(8,1.1) node [near end, below]{};	% Schlussmarkierung
+
+\draw[line width=0.8mm,red](5,1)--(5,2) node [near start, right=12]{\Huge \textsuperscript{ZOPA}};
+\draw[line width=0.8mm,red](8,1)--(8,2);
+
+\node[draw] at (13,2) {KSV};
+\draw[line width=0.8mm,black](5,2)--(12,2);			% zweite Linie
+\draw[line width=0.5mm,black](5,1.9)--(5,2.1) node [near start, above]{};
+\draw[line width=0.5mm,black](12,1.9)--(12,2.1);
+
+%\node[draw] at (4,0.5) {settlement zone};
+%\node[draw] at (9,2.5) {settlement zone};
+
+\draw[decorate,decoration={brace, mirror}] (1,0.8) -- (8,0.8) node at (4.5,0.7) [below]{settlement zone} ;
+
+\draw[decorate,decoration={brace}] (5,2.2) -- (12,2.2) node at (8.5,2.4) [above]{settlement zone} ;
+
+
+\end{tikzpicture}
+
+\vspace{4em}
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+\label{table} 
+\node[draw] at (0,1) {SRB};
+\draw[line width=0.8mm,black](1,1)--(8,1) node [near start=30, below=5]{};			% erste Linie
+\draw[line width=0.5mm,black](1,0.9)--(1,1.1);		% Anfangsmarkierung
+\draw[line width=0.5mm,black](8,0.9)--(8,1.1) node [near end, below]{Schmerzgrenze};	% Schlussmarkierung
+
+\draw[line width=0.5mm,red](5,1)--(5,2) node [near start, right=18]{\LARGE \textsuperscript{ZOPA}};
+\draw[line width=0.5mm,red](8,1)--(8,2);
+
+\node[draw] at (13,2) {KSV};
+\draw[line width=0.8mm,black](5,2)--(12,2);			% zweite Linie
+\draw[line width=0.5mm,black](5,1.9)--(5,2.1) node [near start, above]{Schmerzgrenze};
+\draw[line width=0.5mm,black](12,1.9)--(12,2.1);
+
+\node[draw] at (4,0.5) {settlement zone};
+\node[draw] at (9,2.5) {settlement zone};
+
+
+\end{tikzpicture}
+
+\section{Resultate} 
+
+Nash: beschreibt das Verhandlungsproblem ausführlich als ein nonzero-sum two-person game \citep{Nash1950}
+
+\vspace{1em}
+
+\section{Schlussfolgerung} 
+
+win-win-win-Situation
+
+\vspace{1em}
+
+\section{To-DO} 
+
+\vspace{1em}
+
+Grafik erstellen, Verhandlungsspielraum
+
+Beschreibung Putnam's Theorie
+
+%----------------------------------------------------------------------------------------
+%	LITERATURVERZEICHNIS
+%----------------------------------------------------------------------------------------
+
+\bibliography{gametheory} % bibliography inserted here
+\addcontentsline{toc}{section}{Literaturverzeichnis} % Literaturverzeichnis im Inhaltsverzeichnis aufgeführt
+
+%----------------------------------------------------------------------------------------
+%	ANHANG
+%----------------------------------------------------------------------------------------
+
+\begin{appendix}
+\end{appendix}
+
+\end{document}
+
+%----------------------------------------------------------------------------------------
+%	SYNTAX-Vorlagen
+%----------------------------------------------------------------------------------------
+
+Citation command 	Output
+\citet{goossens93} 	Goossens et al. (1993)
+\citep{goossens93} 	(Goossens et al., 1993)
+\citet*{goossens93} 	Goossens, Mittlebach, and Samarin (1993)
+\citep*{goossens93} 	(Goossens, Mittlebach, and Samarin, 1993)
+\citeauthor{goossens93} 	Goossens et al.
+\citeauthor*{goossens93} 	Goossens, Mittlebach, and Samarin
+\citeyear{goossens93} 	1993
+\citeyearpar{goossens93} 	(1993)
+\citealt{goossens93} 	Goossens et al. 1993
+\citealp{goossens93} 	Goossens et al., 1993
+
+\begin{figure}[h!] % input Graph hier, Option t für "on top"
+  \begin{center}
+    \includegraphics[width=0.67\textwidth]{../../graphics/}
+    \caption{} % Abbildungsnummer
+    \label{fig:}
+ \end{center}
+ \end{figure}
+ 
+ \begin{tabularsmall}{p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}}
+\hline
+ &  &  &  \\
+\hline
+& & & \\ 
+& & & \\ 
+& & & \\
+& & & \\
+& & & \\
+& & & \\
+\hline
+\end{tabularsmall}
+
+\clearpage
+\newpage
+
+\begin{tikzpicture}[node distance=1cm, auto,]
+\label{table} 
+\node[draw] at (0,1) {SRB};
+\draw[line width=0.8mm,black](1,1)--(8,1) node [near start=30, below=5]{};			% erste Linie
+\draw[line width=0.5mm,black](1,0.9)--(1,1.1);		% Anfangsmarkierung
+\draw[line width=0.5mm,black](8,0.9)--(8,1.1) node [near end, below]{Schmerzgrenze};	% Schlussmarkierung
+
+\draw[line width=0.5mm,red](5,1)--(5,2) node [near start, right=18]{\LARGE \textsuperscript{ZOPA}};
+\draw[line width=0.5mm,red](8,1)--(8,2);
+
+\node[draw] at (13,2) {KSV};
+\draw[line width=0.8mm,black](5,2)--(12,2);			% zweite Linie
+\draw[line width=0.5mm,black](5,1.9)--(5,2.1) node [near start, above]{Schmerzgrenze};
+\draw[line width=0.5mm,black](12,1.9)--(12,2.1);
+
+\node[draw] at (4,0.5) {settlement zone};
+\node[draw] at (9,2.5) {settlement zone};
+
+
+\end{tikzpicture}
